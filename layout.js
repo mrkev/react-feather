@@ -186,7 +186,6 @@ window.ChatPost = React.createClass({
   );}
 });
 
-
 window.PhotoPost = React.createClass({
   render: function() { return (
     <div className="r_post_quote">
@@ -203,7 +202,7 @@ window.PhotoPost = React.createClass({
 
 
         {!!this.props.Caption &&
-          <p>{this.props.Caption}</p>
+          <p dangerouslySetInnerHTML={{__html: this.props.Caption}}></p>
         }
 
         <PostMeta {... this.props}/>
@@ -216,6 +215,7 @@ window.PhotoPost = React.createClass({
     </div>
   );}
 });
+
 
 window.PrePost = React.createClass({
   render: function() { return (

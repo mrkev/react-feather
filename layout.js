@@ -203,7 +203,7 @@ window.PhotoPost = React.createClass({
 
 
         {!!this.props.Caption &&
-          <p>{Caption}</p>
+          <p>{this.props.Caption}</p>
         }
 
         <PostMeta {... this.props}/>

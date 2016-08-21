@@ -1,0 +1,19 @@
+body {
+  background: {color:Background};
+  color: {color:Text}; }
+
+#footer .attribution a, #footer .attribution a:link, #footer .attribution a:visited, #header #description a, #header #description a:link, #header #description a:visited, a { color: {color:Links}; }
+
+a:hover { color: {color:Links Hover}; }
+
+#header h1 a { color: {color:Heading}; }
+
+#header h1 a:hover { color: {color:Heading Hover}; }
+
+#description { color: {color:Description}; }
+
+.permalink a { color: {color:Permalink}; }
+
+.permalink a:hover { color: {color:Permalink Hover}; }
+
+#footer, .quote p, .photo p, .video p, .audio p, #content .conversation, .text blockquote { color: {color:Text Alt}; }

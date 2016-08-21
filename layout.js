@@ -262,11 +262,45 @@ window.PhotoPost = React.createClass({
   );}
 });
 
-
 window.PrePost = React.createClass({
   render: function() { return (
     <pre>
      {JSON.stringify(this.props)}
     </pre>
+  );}
+});
+
+
+window.Pagination = React.createClass({
+  render: function() { return (
+    <div id="navigation">
+
+      {!!this.props.NextPage &&
+        <a href={this.props.NextPage} id="nav-next" style={{textTransform:"lowercase"}}>&larr; {this.props["lang:Older"]}</a>
+      }
+
+      <span class="page_number"> &nbsp; {this.props.CurrentPage}/{this.props.TotalPages} &nbsp;</span>
+
+      {!!this.props.PreviousPage &&
+        <a href={this.props.PreviousPage} id="nav-prev" style={{textTransform:"lowercase"}}>{this.props["lang:Newer"]} &rarr;</a>
+      }
+
+
+    </div>
+  );}
+});
+
+window.Footer = React.createClass({
+  render: function() { return (
+    <div id="footer">
+
+      <form action="/search" method="get" id="searchform">
+        <p><input type="search" name="q" value="" results="5" /></p>
+      </form>
+
+      <div className="attribution">
+        <a href="http://www.tumblr.com/theme/3357" title="tumblr theme feather">feather</a> by <a href="http://erichu.tumblr.com" title="eric hu">eric hu</a>
+      </div>
+    </div>
   );}
 });

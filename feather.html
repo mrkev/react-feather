@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+  <title>{Title} {block:PostTitle} {PostTitle} {/block:PostTitle}</title>
+
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}"></link>
+  <link rel="stylesheet" href="http://static.tumblr.com/anfpypi/BcYo3w7st/feather.css" />
+
+  <meta name="viewport"  content="width=660"/>
+  <meta name="text:Google Analytics ID" content="" />
+
+  <!-- DEFAULT COLORS -->
+  <meta name="color:Background" content="#fff"/>
+  <meta name="color:Text" content="#919191"/>
+  <meta name="color:Links" content="#6DC0A9"/>
+  <meta name="color:Links Hover" content="#4A8D75"/>
+  <meta name="color:Heading" content="#000"/>
+  <meta name="color:Heading Hover" content="#000"/>
+  <meta name="color:Description" content="#919191"/>
+  <meta name="color:Permalink" content="#3F3F3F"/>
+  <meta name="color:Permalink Hover" content="#000000"/>
+  <meta name="color:Text Alt" content="#919191"/>
+
+  <style type="text/css" media="screen">
+
+    {CustomCSS}
+
+    body { background: {color:Background}; color: {color:Text}; }
+    #footer .attribution a, #footer .attribution a:link, #footer .attribution a:visited, #header #description a, #header #description a:link, #header #description a:visited, a { color: {color:Links}; }
+    a:hover { color: {color:Links Hover}; }
+    #header h1 a { color: {color:Heading}; }
+    #header h1 a:hover { color: {color:Heading Hover}; }
+    #description { color: {color:Description}; }
+    .permalink a { color: {color:Permalink}; }
+    .permalink a:hover { color: {color:Permalink Hover}; }
+    #footer, .quote p, .photo p, .video p, .audio p, #content .conversation, .text blockquote { color: {color:Text Alt}; }
+
+  </style>
+
+</head>
+
+<body>
+
+  <script src="https://npmcdn.com/react@15.0.0/dist/react.min.js"></script>
+  <script src="https://npmcdn.com/react-dom@15.0.0/dist/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <script src="https://npmcdn.com/react-ga@2.1.1/dist/react-ga.min.js"></script>
+  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/layout.js"></script>
+
+  <div id="header"></div>
+
+  <script type="text/babel">
+
+    var props = {
+      "Title" : "{Title}",
+    {block:Description}
+      "Description" : {JSDescription},
+    {/block:Description}
+    {block:AskEnabled}
+      "AskEnabled" : true,
+    {/block:AskEnabled}
+    {block:SubmissionsEnabled}
+      "SubmissionsEnabled" : true,
+      "SubmitLabel" : "{SubmitLabel}",
+    {/block:SubmissionsEnabled}
+    {block:HasPages}
+      "Pages" : {
+        {block:Pages}
+          {JSURL} : {
+            URL         : {JSURL},
+            Label       : {JSLabel},
+          },
+        {/block:Pages}
+      }
+    {/block:HasPages}
+    
+    }
+
+    ReactDOM.render(
+      <Header {... props} />,
+      document.getElementById('header')
+    );
+
+    ReactDOM.render(
+      <Footer />,
+      document.getElementById('footer')
+    );
+
+  </script>
+
+  <!-- Main page -->
+
+  <div id="content">
+
+    {block:Posts}
+      <div id="post-{PostID}"></div>
+
+      <script type="text/babel">
+      var props = {
+        {block:Quote}
+              "Quote"      : "{Quote}",
+            {block:Source} 
+              "Source"     : "{Source}",
+            {/block:Source}  
+        {/block:Quote}
+        {block:Photo}
+              "LinkOpenTag"      : {JSLinkOpenTag},
+              "LinkCloseTag"     : {JSLinkCloseTag},
+              "PhotoAlt"         : "{PhotoAlt}",
+              "PhotoURL-500"     : "{PhotoURL-500}",
+            {block:Caption}
+              "Caption"          : {JSCaption},
+            {/block:Caption}
+        {/block:Photo}
+        {block:Video}
+              "Video-500"  : {JSVideo-500},
+              "Caption"    : {JSCaption},
+              "lang:Notes" : "{lang:Notes}",
+              "NoteCount"  : "{NoteCount}",
+              "PostNotes"  : false,
+            {block:Date}
+              "TimeAgo"    : "{TimeAgo}",
+            {/block:Date}
+            {block:PostNotes}
+              "PostNotes"  : {JSPostNotes},
+            {/block:PostNotes}
+        {/block:Video}
+        {block:Link}
+              "Target": '{Target}',
+              "URL" : "{URL}",
+              "Name" : "{Name}",
+            {block:Description}
+              "Description" : "{Description}",
+            {/block:Description}
+              "NoteCount"  : "{NoteCount}",
+              "PostNotes"  : false,
+            {block:Date}
+              "TimeAgo"    : "{TimeAgo}",
+            {/block:Date}
+            {block:PostNotes}
+              "PostNotes"  : {JSPostNotes},
+            {/block:PostNotes}
+        {/block:Link}
+        {block:Chat}
+            {block:Title}
+              "Title"          : "{Title}",
+            {/block:Title}
+              Lines : {
+                {block:Lines}
+                  {JSUserNumber} : {
+                    Label      : {JSLabel},
+                    Name       : {JSName},
+                    Line       : {JSLine},
+                    UserNumber : {JSUserNumber},
+                  },
+                {/block:Lines}
+              },
+        {/block:Chat}
+        {block:Text}
+              "Title"      : "{Title}",
+              "Body"       : {JSBody},
+        {/block:Text}
+        {block:Audio}
+              "AudioPlayerGrey"      : "{JSAudioPlayerGrey}",
+              "PlayCountWithLabel"   : "{PlayCountWithLabel}",
+            {block:Caption}
+              "Caption"              : {JSCaption},
+            {/block:Caption}
+            {block:ExternalAudio}
+              "ExternalAudioURL"     : "{ExternalAudioURL}",
+            "lang:Download"          : "{lang:Download}"
+            {/block:ExternalAudio}
+            {block:Artist}
+              "Artist"               : "{Artist}",
+            {/block:Artist}
+            {block:TrackName}
+              "TrackName" : "{TrackName}",
+            {/block:TrackName}
+        {/block:Audio}
+          "PostType"   : "{PostType}",
+          "Permalink"  : "{Permalink}",
+          "lang:Notes" : "{lang:Notes}",
+          "NoteCount"  : "{NoteCount}",
+          "PostNotes"  : false,
+        {block:Date}
+          "TimeAgo"    : "{TimeAgo}",
+        {/block:Date}
+        {block:PostNotes}
+          "PostNotes"  : {JSPostNotes},
+        {/block:PostNotes}
+      }
+      
+      ReactDOM.render(
+        <Post {... props} />,
+        document.getElementById('post-{PostID}')
+      );
+
+    </script>
+  {/block:Posts}
+
+  {block:Pagination}
+
+    <div id="pagination"></div>
+    <script type="text/babel">
+
+      var props = {
+        {block:NextPage}
+          "NextPage" : "{NextPage}",
+        {/block:NextPage}
+          "lang:Older" : "{lang:Older}",
+        {block:PreviousPage}
+          "PreviousPage" : "{PreviousPage}",
+        {/block:PreviousPage}
+          "lang:Newer" : "{lang:Newer}",
+          "CurrentPage" : "{CurrentPage}",
+          "TotalPages"  : "{TotalPages}",
+      }
+
+      ReactDOM.render(
+        <Pagination {... props}/>,
+        document.getElementById('pagination')
+      );
+      
+    </script>
+
+  {/block:Pagination}
+
+  {block:PermalinkPagination}
+
+    <div id="pagination"></div>
+    <script type="text/babel">
+
+      var props = {
+        {block:PreviousPost}
+          "PreviousPost" : "{PreviousPost}",
+        {/block:PreviousPost}
+          "lang:Older" : "{lang:Older}",
+        {block:NextPost}
+          "NextPost" : "{NextPost}",
+        {/block:NextPost}
+          "lang:Newer" : "{lang:Newer}",
+          "CurrentPage" : "{CurrentPage}",
+          "TotalPages"  : "{TotalPages}",
+      }
+
+      ReactDOM.render(
+        <PermalinkPagination {... props}/>,
+        document.getElementById('pagination')
+      );
+      
+    </script>
+
+  {/block:PermalinkPagination}
+
+  <div id="footer"></div>
+
+  </div>
+
+  {block:IfGoogleAnalyticsID}
+    <script> ReactGA.initialize("{text:Google Analytics ID}", { debug: false }); </script>
+  {block:IfGoogleAnalyticsID}
+
+  </body>
+
+</html>

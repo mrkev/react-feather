@@ -24,7 +24,8 @@ window.Header = React.createClass({
         <br />
 
         {!!this.props.Description &&
-          this.props.Description
+          <div dangerouslySetInnerHTML={{__html: this.props.Description}}>
+          </div>
         }
 
       </p>

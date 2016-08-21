@@ -51,7 +51,8 @@ window.PostMeta = React.createClass({
   render: function() { return (
     <div className="postmeta">
       {!!this.props.TimeAgo &&
-        <a href={this.props.Permalink}>
+        <a href={this.props.Permalink}
+           style={{marginRight:".5em"}}>
           {this.props.TimeAgo}
         </a>
       }

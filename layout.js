@@ -35,13 +35,13 @@ window.Header = React.createClass({
 window.Post = React.createClass({
   render: function() {
     switch (this.props.PostType) {
-      case "quote": return <QuotePost {... props} />
-      case "photo": return <PhotoPost {... props} />
-      case "video": return <VideoPost {... props} />
-      case  "link": return <LinkPost  {... props} />
-      case  "chat": return <ChatPost  {... props} />
-      case  "text": return <TextPost  {... props} />
-      case "audio": return <AudioPost {... props} />
+      case "quote": return <QuotePost {... this.props} />
+      case "photo": return <PhotoPost {... this.props} />
+      case "video": return <VideoPost {... this.props} />
+      case  "link": return <LinkPost  {... this.props} />
+      case  "chat": return <ChatPost  {... this.props} />
+      case  "text": return <TextPost  {... this.props} />
+      case "audio": return <AudioPost {... this.props} />
     }
   }
 });

@@ -9,16 +9,16 @@ window.Header = React.createClass({
         {!!this.props.Pages &&
           Object.keys(this.props.Pages).map(function (p) {
             var page = this.props.Pages[p];
-            return <a href={page.URL}>{page.Label}</a> 
+            return <a href={page.URL} style={{marginRight:".5em"}}>{page.Label}</a> 
           }.bind(this))
         }
 
         {!!this.props.AskEnabled &&
-          <a href="/ask">ask</a> 
+          <a href="/ask" style={{marginRight:".5em"}}>ask</a> 
         }
 
         {!!this.props.SubmissionsEnabled &&
-          <a href="/submit">{this.props.SubmitLabel}</a> 
+          <a href="/submit" style={{marginRight:".5em"}}>{this.props.SubmitLabel}</a>
         }
 
         <br />

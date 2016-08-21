@@ -97,111 +97,136 @@
 
   <div id="content">
 
-    {block:Posts}
-      <div id="post-{PostID}"></div>
+    <div id="posts"></div>
 
-      <script type="text/babel">
+    <script type="text/babel">
       var props = {
-        {block:Quote}
-              "Quote"      : "{Quote}",
-            {block:Source} 
-              "Source"     : "{Source}",
-            {/block:Source}  
-        {/block:Quote}
-        {block:Photo}
-              "LinkOpenTag"      : {JSLinkOpenTag},
-              "LinkCloseTag"     : {JSLinkCloseTag},
-              "PhotoAlt"         : "{PhotoAlt}",
-              "PhotoURL-500"     : "{PhotoURL-500}",
-            {block:Caption}
-              "Caption"          : {JSCaption},
-            {/block:Caption}
-        {/block:Photo}
-        {block:Video}
-              "Video-500"  : {JSVideo-500},
-              "Caption"    : {JSCaption},
-              "lang:Notes" : "{lang:Notes}",
-              "NoteCount"  : "{NoteCount}",
-              "PostNotes"  : false,
-            {block:Date}
-              "TimeAgo"    : "{TimeAgo}",
-            {/block:Date}
-            {block:PostNotes}
-              "PostNotes"  : {JSPostNotes},
-            {/block:PostNotes}
-        {/block:Video}
-        {block:Link}
-              "Target": '{Target}',
-              "URL" : "{URL}",
-              "Name" : "{Name}",
-            {block:Description}
-              "Description" : "{Description}",
-            {/block:Description}
-              "NoteCount"  : "{NoteCount}",
-              "PostNotes"  : false,
-            {block:Date}
-              "TimeAgo"    : "{TimeAgo}",
-            {/block:Date}
-            {block:PostNotes}
-              "PostNotes"  : {JSPostNotes},
-            {/block:PostNotes}
-        {/block:Link}
-        {block:Chat}
-            {block:Title}
-              "Title"          : "{Title}",
-            {/block:Title}
-              Lines : {
-                {block:Lines}
-                  {JSUserNumber} : {
-                    Label      : {JSLabel},
-                    Name       : {JSName},
-                    Line       : {JSLine},
-                    UserNumber : {JSUserNumber},
-                  },
-                {/block:Lines}
-              },
-        {/block:Chat}
-        {block:Text}
-              "Title"      : "{Title}",
-              "Body"       : {JSBody},
-        {/block:Text}
-        {block:Audio}
-              "AudioPlayerGrey"      : "{JSAudioPlayerGrey}",
-              "PlayCountWithLabel"   : "{PlayCountWithLabel}",
-            {block:Caption}
-              "Caption"              : {JSCaption},
-            {/block:Caption}
-            {block:ExternalAudio}
-              "ExternalAudioURL"     : "{ExternalAudioURL}",
-            "lang:Download"          : "{lang:Download}"
-            {/block:ExternalAudio}
-            {block:Artist}
-              "Artist"               : "{Artist}",
-            {/block:Artist}
-            {block:TrackName}
-              "TrackName" : "{TrackName}",
-            {/block:TrackName}
-        {/block:Audio}
-          "PostType"   : "{PostType}",
-          "Permalink"  : "{Permalink}",
-          "lang:Notes" : "{lang:Notes}",
-          "NoteCount"  : "{NoteCount}",
-          "PostNotes"  : false,
-        {block:Date}
-          "TimeAgo"    : "{TimeAgo}",
-        {/block:Date}
-        {block:PostNotes}
-          "PostNotes"  : {JSPostNotes},
-        {/block:PostNotes}
-      }
-      
-      ReactDOM.render(
-        <Post {... props} />,
-        document.getElementById('post-{PostID}')
-      );
 
+        // Posts
+        Posts: {
+          {block:Posts inlineMediaWidth="500"}
+  
+            {JSPostID} : {
+  
+              PostType:      {JSPostType},
+
+              {block:Quote}
+                    "Quote"      : "{Quote}",
+                  {block:Source} 
+                    "Source"     : "{Source}",
+                  {/block:Source}  
+              {/block:Quote}
+              {block:Photo}
+                    "LinkOpenTag"      : {JSLinkOpenTag},
+                    "LinkCloseTag"     : {JSLinkCloseTag},
+                    "PhotoAlt"         : "{PhotoAlt}",
+                    "PhotoURL-500"     : "{PhotoURL-500}",
+                  {block:Caption}
+                    "Caption"          : {JSCaption},
+                  {/block:Caption}
+              {/block:Photo}
+              {block:Video}
+                    "Video-500"  : {JSVideo-500},
+                    "Caption"    : {JSCaption},
+                    "lang:Notes" : "{lang:Notes}",
+                    "NoteCount"  : "{NoteCount}",
+                    "PostNotes"  : false,
+                  {block:Date}
+                    "TimeAgo"    : "{TimeAgo}",
+                  {/block:Date}
+                  {block:PostNotes}
+                    "PostNotes"  : {JSPostNotes},
+                  {/block:PostNotes}
+              {/block:Video}
+              {block:Link}
+                    "Target": '{Target}',
+                    "URL" : "{URL}",
+                    "Name" : "{Name}",
+                  {block:Description}
+                    "Description" : "{Description}",
+                  {/block:Description}
+                    "NoteCount"  : "{NoteCount}",
+                    "PostNotes"  : false,
+                  {block:Date}
+                    "TimeAgo"    : "{TimeAgo}",
+                  {/block:Date}
+                  {block:PostNotes}
+                    "PostNotes"  : {JSPostNotes},
+                  {/block:PostNotes}
+              {/block:Link}
+              {block:Chat}
+                  {block:Title}
+                    "Title"          : "{Title}",
+                  {/block:Title}
+                    Lines : {
+                      {block:Lines}
+                        {JSUserNumber} : {
+                          Label      : {JSLabel},
+                          Name       : {JSName},
+                          Line       : {JSLine},
+                          UserNumber : {JSUserNumber},
+                        },
+                      {/block:Lines}
+                    },
+              {/block:Chat}
+              {block:Text}
+                    "Title"      : "{Title}",
+                    "Body"       : {JSBody},
+              {/block:Text}
+              {block:Audio}
+                    "AudioPlayerGrey"      : "{JSAudioPlayerGrey}",
+                    "PlayCountWithLabel"   : "{PlayCountWithLabel}",
+                  {block:Caption}
+                    "Caption"              : {JSCaption},
+                  {/block:Caption}
+                  {block:ExternalAudio}
+                    "ExternalAudioURL"     : "{ExternalAudioURL}",
+                  "lang:Download"          : "{lang:Download}"
+                  {/block:ExternalAudio}
+                  {block:Artist}
+                    "Artist"               : "{Artist}",
+                  {/block:Artist}
+                  {block:TrackName}
+                    "TrackName" : "{TrackName}",
+                  {/block:TrackName}
+              {/block:Audio}
+                "Permalink"  : "{Permalink}",
+                "lang:Notes" : "{lang:Notes}",
+                "NoteCount"  : "{NoteCount}",
+                "PostNotes"  : false,
+              {block:Date}
+                "TimeAgo"    : "{TimeAgo}",
+              {/block:Date}
+              {block:PostNotes}
+                "PostNotes"  : {JSPostNotes},
+              {/block:PostNotes}
+            },
+          {/block:Posts}
+        }
+      }
+
+      window.Content = React.createClass({
+        render: function() { return ( <div>
+            {Object.keys(this.props.Posts).map(function (p) {
+              var post = this.props.Posts[p];
+              switch (post.PostType) {
+                case "quote": return <QuotePost {... post} />
+                case "photo": return <PhotoPost {... post} />
+                case "video": return <VideoPost {... post} />
+                case  "link": return <LinkPost  {... post} />
+                case  "chat": return <ChatPost  {... post} />
+                case  "text": return <TextPost  {... post} />
+                case "audio": return <AudioPost {... post} />
+              }
+            }.bind(this))} </div>
+        );}
+      });
+
+      ReactDOM.render(
+        <Content {... props} />,
+        document.getElementById('posts')
+      );
     </script>
-  {/block:Posts}
 
   {block:Pagination}
 

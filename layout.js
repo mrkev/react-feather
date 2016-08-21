@@ -1,4 +1,38 @@
 
+window.Header = React.createClass({
+  render: function() { return (
+    <div id="header">
+      <h1><a href="/">{this.props.Title}</a></h1>
+
+      <p id="description">
+
+        {!!this.props.Pages &&
+          Object.keys(this.props.Pages).map(function (p) {
+            var page = this.props.Pages[p];
+            return <a href={page.URL}>{page.Label}</a>
+          }.bind(this))
+        }
+
+        {!!this.props.AskEnabled &&
+          <a href="/ask">ask</a>
+        }
+
+        {!!this.props.SubmissionsEnabled &&
+          <a href="/submit">{this.props.SubmitLabel}</a>
+        }
+
+        <br />
+
+        {!!this.props.Description &&
+          this.props.Description
+        }
+
+      </p>
+    </div>
+  );}
+});
+
+
 window.PostMeta = React.createClass({
   render: function() { return (
     <div className="postmeta">

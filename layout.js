@@ -33,6 +33,20 @@ window.Header = React.createClass({
 });
 
 
+window.Post = React.createClass({
+  render: function() {
+    switch (this.props.PostType) {
+      case "quote": return <QuotePost {... props} />
+      case "photo": return <PhotoPost {... props} />
+      case "video": return <VideoPost {... props} />
+      case  "link": return <LinkPost  {... props} />
+      case  "chat": return <ChatPost  {... props} />
+      case  "text": return <TextPost  {... props} />
+      case "audio": return <AudioPost {... props} />
+    }
+  }
+});
+
 window.PostMeta = React.createClass({
   render: function() { return (
     <div className="postmeta">

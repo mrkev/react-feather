@@ -326,7 +326,7 @@ window.Footer = React.createClass({
 window.Blog = React.createClass({
   render: function() { return (
     <div>
-      <Header {... this.props} />,
+      <Header {... this.props} />
 
       <div id="content">
         {Object.keys(this.props.Posts).map(function (p) {
@@ -343,11 +343,11 @@ window.Blog = React.createClass({
         }.bind(this))}
 
         {!!this.props.Pagination &&
-          <Pagination {... this.props.Pagination}/>,
+          <Pagination {... this.props.Pagination}/>
         }
 
         {!!this.props.PermalinkPagination &&
-          <PermalinkPagination {... this.props.PermalinkPagination}/>,
+          <PermalinkPagination {... this.props.PermalinkPagination}/>
         }
 
       </div>

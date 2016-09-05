@@ -96,7 +96,7 @@ window.TextPost = React.createClass({
 window.QuotePost = React.createClass({
   render: function() { return (
      <div className="r_post_quote">
-       <div class="quote post">
+       <div className="quote post">
          <h2>{this.props.Quote}</h2>
 
          {!!this.props.Source &&
@@ -144,7 +144,7 @@ window.LinkPost = React.createClass({
 window.VideoPost = React.createClass({
   render: function() { return (
      <div className="r_post_video">
-       <div class="video post">
+       <div className="video post">
          <div className="vp-body"
               dangerouslySetInnerHTML={{__html: this.props["Video-500"]}}>
          </div>
@@ -174,18 +174,18 @@ window.AudioPost = React.createClass({
                dangerouslySetInnerHTML={{__html: this.props.AudioPlayerGrey}}>
           </div>
 
-          <div class="audio_details">
+          <div className="audio_details">
             {!!this.props.Artist &&
               <b>{this.props.Artist}</b>
             } &ndash;
             {!!this.props.TrackName &&
               <b>{this.props.TrackName}</b>
             }
-              <span class="playcount">({this.props.PlayCountWithLabel})</span>
+              <span className="playcount">({this.props.PlayCountWithLabel})</span>
           </div>
 
           {!!this.props.Caption &&
-            <div class="audio_caption"
+            <div className="audio_caption"
                  dangerouslySetInnerHTML={{__html: this.props.Caption}}>
             </div>
           }
@@ -216,9 +216,9 @@ window.ChatPost = React.createClass({
           {Object.keys(this.props.Lines).map(function (l) {
             var line = this.props.Lines[l];
             return (
-              <li class="member{line.UserNumber}">
+              <li className="member{line.UserNumber}">
 
-                {!!line.Label && <span class="label">{line.Label}</span> }
+                {!!line.Label && <span className="label">{line.Label}</span> }
                 {line.Line}
               </li>
             );
@@ -237,9 +237,9 @@ window.ChatPost = React.createClass({
 window.PhotoPost = React.createClass({
   render: function() { return (
     <div className="r_post_quote">
-      <div class="photo post">
+      <div className="photo post">
 
-        <div class="pp-photo"
+        <div className="pp-photo"
              dangerouslySetInnerHTML={{__html: '' +
                 this.props.LinkOpenTag + '\n' +
                 '<img src="' + this.props["PhotoURL-500"] +
@@ -280,7 +280,7 @@ window.Pagination = React.createClass({
         <a href={this.props.NextPage} id="nav-next" style={{textTransform:"lowercase"}}>&larr; {this.props["lang:Older"]}</a>
       }
 
-      <span class="page_number"> &nbsp; {this.props.CurrentPage}/{this.props.TotalPages} &nbsp;</span>
+      <span className="page_number"> &nbsp; {this.props.CurrentPage}/{this.props.TotalPages} &nbsp;</span>
 
       {!!this.props.PreviousPage &&
         <a href={this.props.PreviousPage} id="nav-prev" style={{textTransform:"lowercase"}}>{this.props["lang:Newer"]} &rarr;</a>
@@ -298,7 +298,7 @@ window.PermalinkPagination = React.createClass({
         <a href={this.props.PreviousPost} id="nav-next" style={{textTransform:"lowercase"}}>&larr; {this.props["lang:Older"]}</a>
       }
 
-      <span class="page_number"> &nbsp; {this.props.CurrentPage}/{this.props.TotalPages} &nbsp;</span>
+      <span className="page_number"> &nbsp; {this.props.CurrentPage}/{this.props.TotalPages} &nbsp;</span>
 
       {!!this.props.NextPost &&
         <a href={this.props.NextPost} id="nav-prev" style={{textTransform:"lowercase"}}>{this.props["lang:Newer"]} &rarr;</a>

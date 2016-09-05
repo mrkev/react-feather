@@ -313,7 +313,7 @@ window.Footer = React.createClass({
     <div id="footer">
 
       <form action="/search" method="get" id="searchform">
-        <input type="text" name="q" results="5">
+        <input type="text" name="q" results="5"></input>
       </form>
 
       <div className="attribution">

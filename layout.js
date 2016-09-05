@@ -322,3 +322,38 @@ window.Footer = React.createClass({
     </div>
   );}
 });
+
+window.Blog = React.createClass({
+  render: function() { return (
+    <div>
+      <Header {... this.props} />,
+
+      <div id="content">
+        {Object.keys(this.props.Posts).map(function (p) {
+          var post = this.props.Posts[p];
+          switch (post.PostType) {
+            case "quote": return <QuotePost {... post} />
+            case "photo": return <PhotoPost {... post} />
+            case "video": return <VideoPost {... post} />
+            case  "link": return <LinkPost  {... post} />
+            case  "chat": return <ChatPost  {... post} />
+            case  "text": return <TextPost  {... post} />
+            case "audio": return <AudioPost {... post} />
+          }
+        }.bind(this))}
+
+        {!!this.props.Pagination &&
+          <Pagination {... this.props.Pagination}/>,
+        }
+
+        {!!this.props.PermalinkPagination &&
+          <PermalinkPagination {... this.props.PermalinkPagination}/>,
+        }
+
+      </div>
+
+      <Footer />
+
+    </div>
+  );}
+});

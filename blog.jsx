@@ -78,7 +78,7 @@ window.Footer = React.createClass({
       </form>
 
       <div className="attribution">
-        <a href="http://www.tumblr.com/theme/3357" title="tumblr theme feather">feather</a> by <a href="http://erichu.tumblr.com" title="eric hu">eric hu</a>, react.js edit by <a href="http://shoesnosocks.tumblr.com" title="kevin chavez">kevin chavez</a>
+        <a href="http://www.tumblr.com/theme/3357" title="tumblr theme feather">feather</a> by <a href="http://erichu.tumblr.com" title="eric hu">eric hu</a><br />react.js edit by <a href="http://shoesnosocks.tumblr.com" title="kevin chavez">kevin chavez</a>
       </div>
     </div>
   );}

@@ -7,7 +7,7 @@ These is an adaptation of Eric Hu's fantastic theme, Feather, to be a [React.js]
 ## Installation
 
 1. Fork.
-1. Edit `feather.html:49`. Replace "mrkev" with your github username.
+1. Edit `feather.html:50-58`. Replace "mrkev" with your github username.
 
 ## Disclaimer
 

@@ -1,4 +1,5 @@
 
+/** Includes: Blog title, links to pages and description */
 window.Header = React.createClass({
   render: function() { return (
     <div id="header">
@@ -33,6 +34,7 @@ window.Header = React.createClass({
   );}
 });
 
+/** Pagination shown on post-list pages (like the index page of the blog, for example) */
 window.Pagination = React.createClass({
   render: function() { return (
     <div id="navigation">
@@ -51,6 +53,7 @@ window.Pagination = React.createClass({
   );}
 });
 
+/** Pagination shown on permalink pages */
 window.PermalinkPagination = React.createClass({
   render: function() { return (
     <div id="navigation">
@@ -69,6 +72,7 @@ window.PermalinkPagination = React.createClass({
   );}
 });
 
+/** Includes: theme attribution and search field */
 window.Footer = React.createClass({
   render: function() { return (
     <div id="footer">
@@ -84,6 +88,11 @@ window.Footer = React.createClass({
   );}
 });
 
+
+/**
+ * The Blog. This is the only class that gets "manually" appended to the HTML.
+ * Recieves the JSON object from feather.html
+ */
 window.Blog = React.createClass({
   render: function() { return (
     <div>

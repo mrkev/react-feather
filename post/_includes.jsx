@@ -1,4 +1,9 @@
 
+/**
+ * Elements all posts include
+ */
+
+/** Meta-info and permalink */
 window.PostMeta = React.createClass({
   render: function() { return (
     <div className="postmeta">
@@ -16,6 +21,7 @@ window.PostMeta = React.createClass({
   );}
 });
 
+/** Notes (basically just loads the props.PostNotes html tumblr gives us) */
 window.PostNotes = React.createClass({
   render: function() { return (
     !!this.props.PostNotes
@@ -24,7 +30,7 @@ window.PostNotes = React.createClass({
   );}
 });
 
-/** For testing **/
+/** A post-type for testing: simply renders the JSON as text **/
 window.PrePost = React.createClass({
   render: function() { return (
     <pre>

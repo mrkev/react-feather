@@ -1,5 +1,4 @@
 
-
 window.AudioPost = React.createClass({
   render: function() { return (
       <div className="r_post_audio">

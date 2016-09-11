@@ -1,6 +1,6 @@
 # react-feather v0.0.1
 
-_by [eric hu](http://erichu.tumblr.com)_
+_by [eric hu](http://erichu.tumblr.com), react edit by [kevin chavez](http://shoesnosocks.tumblr.com)_
 
 These is an adaptation of Eric Hu's fantastic theme, Feather, to be a [React.js](https://facebook.github.io/react/) site. 
 

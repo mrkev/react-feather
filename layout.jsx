@@ -237,7 +237,7 @@ window.ChatPost = React.createClass({
 
 window.PhotoPost = React.createClass({
   render: function() { return (
-    <div className="r_post_quote">
+    <div className="r_post_photo">
       <div className="photo post">
 
         <div className="pp-photo"
@@ -332,6 +332,8 @@ window.Blog = React.createClass({
       <div id="content">
         {Object.keys(this.props.Posts).map(function (p) {
           var post = this.props.Posts[p];
+
+          console.log(post["Video-500"], !post["Video-500"]);
           switch (post.PostType) {
 
             /** Photosets have type photo, but get passed as video smh */

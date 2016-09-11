@@ -42,21 +42,16 @@
 
   </style>
 
-</head>
-
-<body>
-
   <script src="https://unpkg.com/react@15.0.0/dist/react.min.js"></script>
   <script src="https://unpkg.com/react-dom@15.0.0/dist/react-dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
   <script src="https://unpkg.com/react-ga@2.1.1/dist/react-ga.min.js"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/layout.js"></script>
-  
-  <div id="blog"></div>
+  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/layout.jsx"></script>
 
+</head>
+
+<body id="blog">
   <script type="text/babel">
-
-
     var props = {
 
         "Title" : "{Title}",
@@ -130,6 +125,7 @@
                   "Source"     : "{Source}",
                 {/block:Source}
             {/block:Quote}
+
             {block:Photo}
                   "LinkOpenTag"      : {JSLinkOpenTag},
                   "LinkCloseTag"     : {JSLinkCloseTag},
@@ -139,18 +135,11 @@
                   "Caption"          : {JSCaption},
                 {/block:Caption}
             {/block:Photo}
+
             {block:Video}
                   "Video-500"  : {JSVideo-500},
                   "Caption"    : {JSCaption},
                   "lang:Notes" : "{lang:Notes}",
-                  "NoteCount"  : "{NoteCount}",
-                  "PostNotes"  : false,
-                {block:Date}
-                  "TimeAgo"    : "{TimeAgo}",
-                {/block:Date}
-                {block:PostNotes}
-                  "PostNotes"  : {JSPostNotes},
-                {/block:PostNotes}
             {/block:Video}
             {block:Link}
                   "Target": '{Target}',
@@ -159,14 +148,6 @@
                 {block:Description}
                   "Description" : "{Description}",
                 {/block:Description}
-                  "NoteCount"  : "{NoteCount}",
-                  "PostNotes"  : false,
-                {block:Date}
-                  "TimeAgo"    : "{TimeAgo}",
-                {/block:Date}
-                {block:PostNotes}
-                  "PostNotes"  : {JSPostNotes},
-                {/block:PostNotes}
             {/block:Link}
             {block:Chat}
                 {block:Title}
@@ -204,6 +185,7 @@
                   "TrackName" : "{TrackName}",
                 {/block:TrackName}
             {/block:Audio}
+
               "Permalink"  : "{Permalink}",
               "lang:Notes" : "{lang:Notes}",
               "NoteCount"  : "{NoteCount}",
@@ -218,6 +200,7 @@
         {/block:Posts}
       }
     }
+
     ReactDOM.render(
       <Blog {... props} />,
       document.getElementById('blog')
@@ -232,5 +215,4 @@
   {block:IfGoogleAnalyticsID}
 
   </body>
-
 </html>

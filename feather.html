@@ -41,25 +41,24 @@
     #footer, .quote p, .photo p, .video p, .audio p, #content .conversation, .text blockquote { color: {color:Text Alt}; }
 
   </style>
-
-  <script src="https://unpkg.com/react@15.0.0/dist/react.min.js"></script>
-  <script src="https://unpkg.com/react-dom@15.0.0/dist/react-dom.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-  <script src="https://unpkg.com/react-ga@2.1.1/dist/react-ga.min.js"></script>
-  
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/_includes.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/audio.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/chat.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/link.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/photo.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/quote.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/text.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/post/video.jsx"></script>
-  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/rumblr/master/blog.jsx"></script>
-
 </head>
 
 <body id="blog">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/_includes.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/audio.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/chat.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/link.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/photo.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/quote.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/text.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/post/video.jsx"></script>
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/rumblr/master/blog.jsx"></script>
+
   <script type="text/babel">
 
     var urlParams; // http://stackoverflow.com/posts/2880929/revisions
@@ -236,12 +235,5 @@
     }
 
   </script>
-
-  <!-- Main page -->
-
-  {block:IfGoogleAnalyticsID}
-    <script> ReactGA.initialize("{text:Google Analytics ID}", { debug: false }); </script>
-  {block:IfGoogleAnalyticsID}
-
   </body>
 </html>

@@ -165,7 +165,7 @@
   
   
   .photo img, .photo a img, .video object {
-  width: 500px;
+  max-width: 500px;
   }
 
     

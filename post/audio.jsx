@@ -13,9 +13,9 @@ window.AudioPost = React.createClass({
               <b>{this.props.Artist}</b>
             } &ndash;
             {!!this.props.TrackName &&
-              <b>{this.props.TrackName}</b>
+              <b>{this.props.TrackName} </b>
             }
-              <span className="playcount">({this.props.PlayCountWithLabel})</span>
+            <span className="playcount">({this.props.PlayCountWithLabel})</span>
           </div>
 
           {!!this.props.Caption &&

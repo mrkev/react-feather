@@ -12,35 +12,6 @@
   <link rel="stylesheet" href="https://gitcdn.xyz/repo/mrkev/react-feather/master/feather.css" />
 
   <meta name="viewport"  content="width=660"/>
-  <meta name="text:Google Analytics ID" content="" />
-
-  <!-- DEFAULT COLORS -->
-  <meta name="color:Background" content="#fff"/>
-  <meta name="color:Text" content="#919191"/>
-  <meta name="color:Links" content="#6DC0A9"/>
-  <meta name="color:Links Hover" content="#4A8D75"/>
-  <meta name="color:Heading" content="#000"/>
-  <meta name="color:Heading Hover" content="#000"/>
-  <meta name="color:Description" content="#919191"/>
-  <meta name="color:Permalink" content="#3F3F3F"/>
-  <meta name="color:Permalink Hover" content="#000000"/>
-  <meta name="color:Text Alt" content="#919191"/>
-
-  <style type="text/css" media="screen">
-
-    {CustomCSS}
-
-    body { background: {color:Background}; color: {color:Text}; }
-    #footer .attribution a, #footer .attribution a:link, #footer .attribution a:visited, #header #description a, #header #description a:link, #header #description a:visited, a { color: {color:Links}; }
-    a:hover { color: {color:Links Hover}; }
-    #header h1 a { color: {color:Heading}; }
-    #header h1 a:hover { color: {color:Heading Hover}; }
-    #description { color: {color:Description}; }
-    .permalink a { color: {color:Permalink}; }
-    .permalink a:hover { color: {color:Permalink Hover}; }
-    #footer, .quote p, .photo p, .video p, .audio p, #content .conversation, .text blockquote { color: {color:Text Alt}; }
-
-  </style>
 </head>
 
 <body id="blog">
@@ -58,6 +29,42 @@
   <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/react-feather/master/post/text.jsx"></script>
   <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/react-feather/master/post/video.jsx"></script>
   <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/react-feather/master/blog.jsx"></script>
+
+  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/react-feather/master/config.js"></script>
+
+  <script type="text/babel">
+
+    window.getRenderedObj = function (strsrc) {
+      console.log(strsrc);
+      var res;
+      try { eval("res = " + strsrc); return res; } 
+      catch (e) { console.log(e); return null; }
+    }
+
+    let css = `
+      ${window.config["CustomCSS"]}
+
+      body { background: ${window.config["color:Background"]}; color: ${window.config["color:Text"]}; }
+      #footer .attribution a, #footer .attribution a:link, #footer .attribution a:visited, #header #description a, #header #description a:link, #header #description a:visited, a { color: ${window.config["color:Links"]}; }
+      a:hover { color: ${window.config["color:Links Hover"]}; }
+      #header h1 a { color: ${window.config["color:Heading"]}; }
+      #header h1 a:hover { color: ${window.config["color:Heading Hover"]}; }
+      #description { color: ${window.config["color:Description"]}; }
+      .permalink a { color: ${window.config["color:Permalink"]}; }
+      .permalink a:hover { color: ${window.config["color:Permalink Hover"]}; }
+      #footer, .quote p, .photo p, .video p, .audio p, #content .conversation, .text blockquote { color: ${window.config["color:Text Alt"]}; }
+    `
+
+    let head  = document.head || document.getElementsByTagName('head')[0],
+        style = document.createElement('style');
+
+    style.type = 'text/css';
+
+    if (style.styleSheet) { style.styleSheet.cssText = css; }
+    else { style.appendChild(document.createTextNode(css)); }
+
+    head.appendChild(style);
+  </script>
 
   <script type="text/babel">
 

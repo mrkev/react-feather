@@ -113,6 +113,10 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _photo = __webpack_require__(2);
@@ -360,47 +364,59 @@
 	 * Recieves the JSON object from feather.html
 	 */
 	
+	var Blog = function (_React$Component5) {
+	  _inherits(Blog, _React$Component5);
 	
-	window.Blog = _react2.default.createClass({
-	  displayName: 'Blog',
+	  function Blog() {
+	    _classCallCheck(this, Blog);
 	
-	  render: function render() {
-	    return _react2.default.createElement(
-	      'div',
-	      null,
-	      _react2.default.createElement(Header, this.props),
-	      _react2.default.createElement(
-	        'div',
-	        { id: 'content' },
-	        Object.keys(this.props.Posts).map(function (p) {
-	          var post = this.props.Posts[p];
-	
-	          switch (post.PostType) {
-	
-	            /** Photosets have type photo, but get passed as video smh */
-	            case "photo":
-	              return !post["Video-500"] ? _react2.default.createElement(_photo2.default, post) : _react2.default.createElement(_video2.default, post);
-	            case "quote":
-	              return _react2.default.createElement(_quote2.default, post);
-	            case "video":
-	              return _react2.default.createElement(_video2.default, post);
-	            case "link":
-	              return _react2.default.createElement(_link2.default, post);
-	            case "chat":
-	              return _react2.default.createElement(_chat2.default, post);
-	            case "text":
-	              return _react2.default.createElement(_text2.default, post);
-	            case "audio":
-	              return _react2.default.createElement(_audio2.default, post);
-	          }
-	        }.bind(this)),
-	        !!this.props.Pagination && _react2.default.createElement(Pagination, this.props.Pagination),
-	        !!this.props.PermalinkPagination && _react2.default.createElement(PermalinkPagination, this.props.PermalinkPagination)
-	      ),
-	      _react2.default.createElement(Footer, null)
-	    );
+	    return _possibleConstructorReturn(this, (Blog.__proto__ || Object.getPrototypeOf(Blog)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(Blog, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(Header, this.props),
+	        _react2.default.createElement(
+	          'div',
+	          { id: 'content' },
+	          Object.keys(this.props.Posts).map(function (p) {
+	            var post = this.props.Posts[p];
+	
+	            switch (post.PostType) {
+	
+	              /** Photosets have type photo, but get passed as video smh */
+	              case "photo":
+	                return !post["Video-500"] ? _react2.default.createElement(_photo2.default, post) : _react2.default.createElement(_video2.default, post);
+	              case "quote":
+	                return _react2.default.createElement(_quote2.default, post);
+	              case "video":
+	                return _react2.default.createElement(_video2.default, post);
+	              case "link":
+	                return _react2.default.createElement(_link2.default, post);
+	              case "chat":
+	                return _react2.default.createElement(_chat2.default, post);
+	              case "text":
+	                return _react2.default.createElement(_text2.default, post);
+	              case "audio":
+	                return _react2.default.createElement(_audio2.default, post);
+	            }
+	          }.bind(this)),
+	          !!this.props.Pagination && _react2.default.createElement(Pagination, this.props.Pagination),
+	          !!this.props.PermalinkPagination && _react2.default.createElement(PermalinkPagination, this.props.PermalinkPagination)
+	        ),
+	        _react2.default.createElement(Footer, null)
+	      );
+	    }
+	  }]);
+	
+	  return Blog;
+	}(_react2.default.Component);
+	
+	exports.default = Blog;
 
 /***/ },
 /* 2 */

@@ -102,8 +102,8 @@ class Footer extends React.Component {
  * The Blog. This is the only class that gets "manually" appended to the HTML.
  * Recieves the JSON object from feather.html
  */
-window.Blog = React.createClass({
-  render: function() { return (
+export default class Blog extends React.Component {
+  render() { return (
     <div>
       <Header {... this.props} />
 
@@ -137,5 +137,5 @@ window.Blog = React.createClass({
       <Footer />
 
     </div>
-  );}
-});
+  )}
+}

@@ -6,6 +6,8 @@ import ChatPost  from './post/chat.jsx'
 import TextPost  from './post/text.jsx'
 import AudioPost from './post/audio.jsx'
 
+import React from 'react'
+
 /** Includes: Blog title, links to pages and description */
 class Header extends React.Component {
   render() { return (
@@ -109,7 +111,6 @@ window.Blog = React.createClass({
         {Object.keys(this.props.Posts).map(function (p) {
           var post = this.props.Posts[p];
 
-          console.log(post["Video-500"], !post["Video-500"]);
           switch (post.PostType) {
 
             /** Photosets have type photo, but get passed as video smh */

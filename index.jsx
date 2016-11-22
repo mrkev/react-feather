@@ -2,6 +2,8 @@
 
 import Blog from './blog.jsx'
 import config from './config.js'
+import ReactDOM from 'react-dom'
+
 
 var urlParams; // http://stackoverflow.com/posts/2880929/revisions
 (window.onpopstate = function () {
@@ -61,3 +63,6 @@ Promise.resolve(window.getRenderedObj(raw_source))
   }
 })
 .catch(console.error);
+
+
+ReactDOM.render(<MyComponent />, node);

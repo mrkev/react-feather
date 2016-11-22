@@ -1,3 +1,4 @@
+import React from 'react'
 
 /**
  * Elements all posts include

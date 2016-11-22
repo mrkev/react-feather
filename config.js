@@ -1,4 +1,4 @@
-window.config = {
+export default {
   "color:Background"      : "#ffffff",
   "color:Text"            : "#919191",
   "color:Links"           : "#6dc0a9",

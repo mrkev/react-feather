@@ -3,6 +3,8 @@
 import Blog from './blog.jsx'
 import config from './config.js'
 import ReactDOM from 'react-dom'
+import React from 'react'
+
 
 
 var urlParams; // http://stackoverflow.com/posts/2880929/revisions
@@ -46,23 +48,17 @@ head.appendChild(style);
 
 /** Loads the blog */
 
-Promise.resolve(window.getRenderedObj(raw_source))
-.then(props => {
-  if (!props) throw new Error("LAME");
-  window.props = props;
+if (!window.blog) throw new Error("LAME");
 
-  if (urlParams['render'] !== 'raw') {
-    ReactDOM.render(
-      <Blog {... props} />,
-      document.getElementById('blog')
-    );
-  } else {
-    document.open();
-    document.write(JSON.stringify(props));
-    document.close();
-  }
-})
-.catch(console.error);
+if (urlParams['render'] !== 'raw') {
+  ReactDOM.render(
+    <Blog {... window.blog} />,
+    document.getElementById('blog')
+  );
+} else {
+  document.open();
+  document.write(JSON.stringify(props));
+  document.close();
+}
 
 
-ReactDOM.render(<MyComponent />, node);

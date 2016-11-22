@@ -102,18 +102,15 @@
 	
 	/** Loads the blog */
 	
-	Promise.resolve(window.getRenderedObj(raw_source)).then(function (props) {
-	  if (!props) throw new Error("LAME");
-	  window.props = props;
+	if (!window.blog) throw new Error("LAME");
 	
-	  if (urlParams['render'] !== 'raw') {
-	    _reactDom2.default.render(_react2.default.createElement(_blog2.default, props), document.getElementById('blog'));
-	  } else {
-	    document.open();
-	    document.write(JSON.stringify(props));
-	    document.close();
-	  }
-	}).catch(console.error);
+	if (urlParams['render'] !== 'raw') {
+	  _reactDom2.default.render(_react2.default.createElement(_blog2.default, window.blog), document.getElementById('blog'));
+	} else {
+	  document.open();
+	  document.write(JSON.stringify(props));
+	  document.close();
+	}
 
 /***/ },
 /* 1 */

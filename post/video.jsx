@@ -1,5 +1,8 @@
+let PostMeta  = require('./_includes.jsx').PostMeta
+let PostNotes = require('./_includes.jsx').PostNotes
+let PrePost   = require('./_includes.jsx').PrePost
 
-window.VideoPost = React.createClass({
+module.exports = React.createClass({
   render: function() { return (
      <div className="r_post_video">
        <div className="video post">

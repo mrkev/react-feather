@@ -9,5 +9,4 @@ window.config = {
   "color:Permalink"       : "#3f3f3f",
   "color:Permalink Hover" : "#000000",
   "color:Text Alt"        : "#919191",
-  "CustomCSS"             : "",
 }

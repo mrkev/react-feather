@@ -1,6 +1,13 @@
+let PhotoPost = require('./post/photo.jsx')
+let QuotePost = require('./post/quote.jsx')
+let VideoPost = require('./post/video.jsx')
+let LinkPost  = require('./post/link.jsx')
+let ChatPost  = require('./post/chat.jsx')
+let TextPost  = require('./post/text.jsx')
+let AudioPost = require('./post/audio.jsx')
 
 /** Includes: Blog title, links to pages and description */
-window.Header = React.createClass({
+let Header = React.createClass({
   render: function() { return (
     <div id="header">
       <h1><a href="/">{this.props.Title}</a></h1>
@@ -35,7 +42,7 @@ window.Header = React.createClass({
 });
 
 /** Pagination shown on post-list pages (like the index page of the blog, for example) */
-window.Pagination = React.createClass({
+let Pagination = React.createClass({
   render: function() { return (
     <div id="navigation">
 
@@ -54,7 +61,7 @@ window.Pagination = React.createClass({
 });
 
 /** Pagination shown on permalink pages */
-window.PermalinkPagination = React.createClass({
+let PermalinkPagination = React.createClass({
   render: function() { return (
     <div id="navigation">
 
@@ -73,7 +80,7 @@ window.PermalinkPagination = React.createClass({
 });
 
 /** Includes: theme attribution and search field */
-window.Footer = React.createClass({
+let Footer = React.createClass({
   render: function() { return (
     <div id="footer">
 

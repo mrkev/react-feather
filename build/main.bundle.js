@@ -310,58 +310,105 @@
 
 	"use strict";
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
 	/**
 	 * Elements all posts include
 	 */
 	
 	/** Meta-info and permalink */
-	var PostMeta = React.createClass({
-	  displayName: "PostMeta",
+	var PostMeta = function (_React$Component) {
+	  _inherits(PostMeta, _React$Component);
 	
-	  render: function render() {
-	    return React.createElement(
-	      "div",
-	      { className: "postmeta" },
-	      !!this.props.TimeAgo && React.createElement(
-	        "a",
-	        { href: this.props.Permalink,
-	          style: { marginRight: ".5em" } },
-	        this.props.TimeAgo
-	      ),
-	      React.createElement(
-	        "a",
-	        { href: this.props.Permalink,
-	          style: { textTransform: 'lowercase' } },
-	        this.props["lang:Notes"],
-	        " (",
-	        this.props.NoteCount,
-	        ")"
-	      )
-	    );
+	  function PostMeta() {
+	    _classCallCheck(this, PostMeta);
+	
+	    return _possibleConstructorReturn(this, (PostMeta.__proto__ || Object.getPrototypeOf(PostMeta)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(PostMeta, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "postmeta" },
+	        !!this.props.TimeAgo && React.createElement(
+	          "a",
+	          { href: this.props.Permalink,
+	            style: { marginRight: ".5em" } },
+	          this.props.TimeAgo
+	        ),
+	        React.createElement(
+	          "a",
+	          { href: this.props.Permalink,
+	            style: { textTransform: 'lowercase' } },
+	          this.props["lang:Notes"],
+	          " (",
+	          this.props.NoteCount,
+	          ")"
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return PostMeta;
+	}(React.Component);
 	
 	/** Notes (basically just loads the props.PostNotes html tumblr gives us) */
-	var PostNotes = React.createClass({
-	  displayName: "PostNotes",
 	
-	  render: function render() {
-	    return !!this.props.PostNotes ? React.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.PostNotes } }) : false;
+	
+	var PostNotes = function (_React$Component2) {
+	  _inherits(PostNotes, _React$Component2);
+	
+	  function PostNotes() {
+	    _classCallCheck(this, PostNotes);
+	
+	    return _possibleConstructorReturn(this, (PostNotes.__proto__ || Object.getPrototypeOf(PostNotes)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(PostNotes, [{
+	    key: "render",
+	    value: function render() {
+	      return !!this.props.PostNotes ? React.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.PostNotes } }) : false;
+	    }
+	  }]);
+	
+	  return PostNotes;
+	}(React.Component);
 	
 	/** A post-type for testing: simply renders the JSON as text **/
-	var PrePost = React.createClass({
-	  displayName: "PrePost",
 	
-	  render: function render() {
-	    return React.createElement(
-	      "pre",
-	      null,
-	      JSON.stringify(this.props)
-	    );
+	
+	var PrePost = function (_React$Component3) {
+	  _inherits(PrePost, _React$Component3);
+	
+	  function PrePost() {
+	    _classCallCheck(this, PrePost);
+	
+	    return _possibleConstructorReturn(this, (PrePost.__proto__ || Object.getPrototypeOf(PrePost)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(PrePost, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "pre",
+	        null,
+	        " ",
+	        JSON.stringify(this.props),
+	        " "
+	      );
+	    }
+	  }]);
+	
+	  return PrePost;
+	}(React.Component);
 	
 	module.exports = {
 	  PostMeta: PostMeta,

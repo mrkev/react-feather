@@ -4,8 +4,8 @@
  */
 
 /** Meta-info and permalink */
-let PostMeta = React.createClass({
-  render: function() { return (
+class PostMeta extends React.Component {
+  render() { return (
     <div className="postmeta">
       {!!this.props.TimeAgo &&
         <a href={this.props.Permalink}
@@ -18,26 +18,24 @@ let PostMeta = React.createClass({
            {this.props["lang:Notes"]} ({this.props.NoteCount})
         </a>
     </div>
-  );}
-});
+  )}
+}
 
 /** Notes (basically just loads the props.PostNotes html tumblr gives us) */
-let PostNotes = React.createClass({
-  render: function() { return (
+class PostNotes extends React.Component {
+  render() { return (
     !!this.props.PostNotes
     ? <div dangerouslySetInnerHTML={{__html: this.props.PostNotes}}></div>
     : false
-  );}
-});
+  )}
+}
 
 /** A post-type for testing: simply renders the JSON as text **/
-let PrePost = React.createClass({
-  render: function() { return (
-    <pre>
-     {JSON.stringify(this.props)}
-    </pre>
-  );}
-});
+class PrePost extends React.Component {
+  render() { return (
+    <pre> { JSON.stringify(this.props) } </pre>
+  )}
+}
 
 module.exports = {
   PostMeta : PostMeta,

@@ -12,15 +12,14 @@
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
   <link rel="apple-touch-icon" href="{PortraitURL-128}"></link> 
-  <link rel="stylesheet" href="https://gitcdn.xyz/repo/mrkev/react-feather/master/feather.css" />
-
-  <meta name="viewport"  content="width=660"/>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
-  
-  <!-- HELPERS -->
+  <link rel="stylesheet" href="https://gitcdn.xyz/repo/mrkev/react-feather/master/feather.css" />
 
-  <script>
+</head>
+
+<body id="blog">
+  <script type="text/babel">
 
     window.getRenderedObj = function (strsrc) {
       var res;
@@ -28,7 +27,7 @@
       catch (e) { console.error(e); return null; }
     }
 
-    let raw_source = /*586f3690*/ `{
+    window.raw_source = /*586f3690*/ `{
         "Title" : "{Title}",
       {block:Description}
         "Description" : {JSDescription},
@@ -183,12 +182,9 @@
       }
     }` /*586f3690*/
 
-    window.blog = window.getRenderedObj(raw_source);
+    window.blog = window.getRenderedObj(window.raw_source);
     
   </script>
-</head>
-
-<body id="blog">
   <script src="https://rawgit.com/mrkev/react-feather/bundler/build/main.bundle.js"></script>
 </body>
 </html>

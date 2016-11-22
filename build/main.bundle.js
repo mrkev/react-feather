@@ -46,13 +46,35 @@
 
 	'use strict';
 	
-	var PhotoPost = __webpack_require__(1);
-	var QuotePost = __webpack_require__(3);
-	var VideoPost = __webpack_require__(4);
-	var LinkPost = __webpack_require__(5);
-	var ChatPost = __webpack_require__(6);
-	var TextPost = __webpack_require__(7);
-	var AudioPost = __webpack_require__(8);
+	var _photo = __webpack_require__(1);
+	
+	var _photo2 = _interopRequireDefault(_photo);
+	
+	var _quote = __webpack_require__(3);
+	
+	var _quote2 = _interopRequireDefault(_quote);
+	
+	var _video = __webpack_require__(4);
+	
+	var _video2 = _interopRequireDefault(_video);
+	
+	var _link = __webpack_require__(5);
+	
+	var _link2 = _interopRequireDefault(_link);
+	
+	var _chat = __webpack_require__(6);
+	
+	var _chat2 = _interopRequireDefault(_chat);
+	
+	var _text = __webpack_require__(7);
+	
+	var _text2 = _interopRequireDefault(_text);
+	
+	var _audio = __webpack_require__(8);
+	
+	var _audio2 = _interopRequireDefault(_audio);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	/** Includes: Blog title, links to pages and description */
 	var Header = React.createClass({
@@ -227,19 +249,19 @@
 	
 	            /** Photosets have type photo, but get passed as video smh */
 	            case "photo":
-	              return !post["Video-500"] ? React.createElement(PhotoPost, post) : React.createElement(VideoPost, post);
+	              return !post["Video-500"] ? React.createElement(_photo2.default, post) : React.createElement(_video2.default, post);
 	            case "quote":
-	              return React.createElement(QuotePost, post);
+	              return React.createElement(_quote2.default, post);
 	            case "video":
-	              return React.createElement(VideoPost, post);
+	              return React.createElement(_video2.default, post);
 	            case "link":
-	              return React.createElement(LinkPost, post);
+	              return React.createElement(_link2.default, post);
 	            case "chat":
-	              return React.createElement(ChatPost, post);
+	              return React.createElement(_chat2.default, post);
 	            case "text":
-	              return React.createElement(TextPost, post);
+	              return React.createElement(_text2.default, post);
 	            case "audio":
-	              return React.createElement(AudioPost, post);
+	              return React.createElement(_audio2.default, post);
 	          }
 	        }.bind(this)),
 	        !!this.props.Pagination && React.createElement(Pagination, this.props.Pagination),

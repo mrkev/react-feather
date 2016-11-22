@@ -1,10 +1,10 @@
-let PhotoPost = require('./post/photo.jsx')
-let QuotePost = require('./post/quote.jsx')
-let VideoPost = require('./post/video.jsx')
-let LinkPost  = require('./post/link.jsx')
-let ChatPost  = require('./post/chat.jsx')
-let TextPost  = require('./post/text.jsx')
-let AudioPost = require('./post/audio.jsx')
+import PhotoPost from './post/photo.jsx'
+import QuotePost from './post/quote.jsx'
+import VideoPost from './post/video.jsx'
+import LinkPost  from './post/link.jsx'
+import ChatPost  from './post/chat.jsx'
+import TextPost  from './post/text.jsx'
+import AudioPost from './post/audio.jsx'
 
 /** Includes: Blog title, links to pages and description */
 let Header = React.createClass({

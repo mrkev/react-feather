@@ -1,10 +1,9 @@
-let PostMeta  = require('./_includes.jsx').PostMeta
-let PostNotes = require('./_includes.jsx').PostNotes
-let PrePost   = require('./_includes.jsx').PrePost
 
-module.exports = React.createClass({
-  render: function() { return (
-      <div className="r_post_link">
+import { PostMeta, PostNotes, PrePost } from './_includes.jsx';
+
+export default class LinkPost extends React.Component {
+  render () { return (
+    <div className="r_post_link">
         <div className="link post">
 
           <h2>
@@ -27,4 +26,4 @@ module.exports = React.createClass({
 
       </div>
   );}
-});
+}

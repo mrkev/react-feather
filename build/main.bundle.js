@@ -46,6 +46,8 @@
 
 	'use strict';
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _photo = __webpack_require__(1);
 	
 	var _photo2 = _interopRequireDefault(_photo);
@@ -76,160 +78,218 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	/** Includes: Blog title, links to pages and description */
-	var Header = React.createClass({
-	  displayName: 'Header',
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'header' },
-	      React.createElement(
-	        'h1',
-	        null,
-	        React.createElement(
-	          'a',
-	          { href: '/' },
-	          this.props.Title
-	        )
-	      ),
-	      React.createElement(
-	        'p',
-	        { id: 'description' },
-	        !!this.props.Pages && Object.keys(this.props.Pages).map(function (p) {
-	          var page = this.props.Pages[p];
-	          return React.createElement(
-	            'a',
-	            { href: page.URL, style: { marginRight: ".5em" } },
-	            page.Label
-	          );
-	        }.bind(this)),
-	        !!this.props.AskEnabled && React.createElement(
-	          'a',
-	          { href: '/ask', style: { marginRight: ".5em" } },
-	          'ask'
-	        ),
-	        !!this.props.SubmissionsEnabled && React.createElement(
-	          'a',
-	          { href: '/submit', style: { marginRight: ".5em" } },
-	          this.props.SubmitLabel
-	        ),
-	        React.createElement('br', null),
-	        !!this.props.Description && React.createElement('div', { dangerouslySetInnerHTML: { __html: this.props.Description } })
-	      )
-	    );
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	/** Includes: Blog title, links to pages and description */
+	var Header = function (_React$Component) {
+	  _inherits(Header, _React$Component);
+	
+	  function Header() {
+	    _classCallCheck(this, Header);
+	
+	    return _possibleConstructorReturn(this, (Header.__proto__ || Object.getPrototypeOf(Header)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(Header, [{
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'div',
+	        { id: 'header' },
+	        React.createElement(
+	          'h1',
+	          null,
+	          React.createElement(
+	            'a',
+	            { href: '/' },
+	            this.props.Title
+	          )
+	        ),
+	        React.createElement(
+	          'p',
+	          { id: 'description' },
+	          !!this.props.Pages && Object.keys(this.props.Pages).map(function (p) {
+	            var page = this.props.Pages[p];
+	            return React.createElement(
+	              'a',
+	              { href: page.URL, style: { marginRight: ".5em" } },
+	              page.Label
+	            );
+	          }.bind(this)),
+	          !!this.props.AskEnabled && React.createElement(
+	            'a',
+	            { href: '/ask', style: { marginRight: ".5em" } },
+	            'ask'
+	          ),
+	          !!this.props.SubmissionsEnabled && React.createElement(
+	            'a',
+	            { href: '/submit', style: { marginRight: ".5em" } },
+	            this.props.SubmitLabel
+	          ),
+	          React.createElement('br', null),
+	          !!this.props.Description && React.createElement('div', { dangerouslySetInnerHTML: { __html: this.props.Description } })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Header;
+	}(React.Component);
 	
 	/** Pagination shown on post-list pages (like the index page of the blog, for example) */
-	var Pagination = React.createClass({
-	  displayName: 'Pagination',
 	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'navigation' },
-	      !!this.props.NextPage && React.createElement(
-	        'a',
-	        { href: this.props.NextPage, id: 'nav-next', style: { textTransform: "lowercase" } },
-	        '\u2190 ',
-	        this.props["lang:Older"]
-	      ),
-	      React.createElement(
-	        'span',
-	        { className: 'page_number' },
-	        ' \xA0 ',
-	        this.props.CurrentPage,
-	        '/',
-	        this.props.TotalPages,
-	        ' \xA0'
-	      ),
-	      !!this.props.PreviousPage && React.createElement(
-	        'a',
-	        { href: this.props.PreviousPage, id: 'nav-prev', style: { textTransform: "lowercase" } },
-	        this.props["lang:Newer"],
-	        ' \u2192'
-	      )
-	    );
+	
+	var Pagination = function (_React$Component2) {
+	  _inherits(Pagination, _React$Component2);
+	
+	  function Pagination() {
+	    _classCallCheck(this, Pagination);
+	
+	    return _possibleConstructorReturn(this, (Pagination.__proto__ || Object.getPrototypeOf(Pagination)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(Pagination, [{
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'div',
+	        { id: 'navigation' },
+	        !!this.props.NextPage && React.createElement(
+	          'a',
+	          { href: this.props.NextPage, id: 'nav-next', style: { textTransform: "lowercase" } },
+	          '\u2190 ',
+	          this.props["lang:Older"]
+	        ),
+	        React.createElement(
+	          'span',
+	          { className: 'page_number' },
+	          ' \xA0 ',
+	          this.props.CurrentPage,
+	          '/',
+	          this.props.TotalPages,
+	          ' \xA0'
+	        ),
+	        !!this.props.PreviousPage && React.createElement(
+	          'a',
+	          { href: this.props.PreviousPage, id: 'nav-prev', style: { textTransform: "lowercase" } },
+	          this.props["lang:Newer"],
+	          ' \u2192'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Pagination;
+	}(React.Component);
 	
 	/** Pagination shown on permalink pages */
-	var PermalinkPagination = React.createClass({
-	  displayName: 'PermalinkPagination',
 	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'navigation' },
-	      !!this.props.PreviousPost && React.createElement(
-	        'a',
-	        { href: this.props.PreviousPost, id: 'nav-next', style: { textTransform: "lowercase" } },
-	        '\u2190 ',
-	        this.props["lang:Older"]
-	      ),
-	      React.createElement(
-	        'span',
-	        { className: 'page_number' },
-	        ' \xA0 ',
-	        this.props.CurrentPage,
-	        '/',
-	        this.props.TotalPages,
-	        ' \xA0'
-	      ),
-	      !!this.props.NextPost && React.createElement(
-	        'a',
-	        { href: this.props.NextPost, id: 'nav-prev', style: { textTransform: "lowercase" } },
-	        this.props["lang:Newer"],
-	        ' \u2192'
-	      )
-	    );
+	
+	var PermalinkPagination = function (_React$Component3) {
+	  _inherits(PermalinkPagination, _React$Component3);
+	
+	  function PermalinkPagination() {
+	    _classCallCheck(this, PermalinkPagination);
+	
+	    return _possibleConstructorReturn(this, (PermalinkPagination.__proto__ || Object.getPrototypeOf(PermalinkPagination)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(PermalinkPagination, [{
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'div',
+	        { id: 'navigation' },
+	        !!this.props.PreviousPost && React.createElement(
+	          'a',
+	          { href: this.props.PreviousPost, id: 'nav-next', style: { textTransform: "lowercase" } },
+	          '\u2190 ',
+	          this.props["lang:Older"]
+	        ),
+	        React.createElement(
+	          'span',
+	          { className: 'page_number' },
+	          ' \xA0 ',
+	          this.props.CurrentPage,
+	          '/',
+	          this.props.TotalPages,
+	          ' \xA0'
+	        ),
+	        !!this.props.NextPost && React.createElement(
+	          'a',
+	          { href: this.props.NextPost, id: 'nav-prev', style: { textTransform: "lowercase" } },
+	          this.props["lang:Newer"],
+	          ' \u2192'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return PermalinkPagination;
+	}(React.Component);
 	
 	/** Includes: theme attribution and search field */
-	var Footer = React.createClass({
-	  displayName: 'Footer',
 	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { id: 'footer' },
-	      React.createElement(
-	        'form',
-	        { action: '/search', method: 'get', id: 'searchform' },
-	        React.createElement('input', { type: 'text', name: 'q', results: '5' })
-	      ),
-	      React.createElement(
-	        'div',
-	        { className: 'attribution' },
-	        React.createElement(
-	          'a',
-	          { href: 'http://www.tumblr.com/theme/3357', title: 'tumblr theme feather' },
-	          'feather'
-	        ),
-	        ' by ',
-	        React.createElement(
-	          'a',
-	          { href: 'http://erichu.tumblr.com', title: 'eric hu' },
-	          'eric hu'
-	        ),
-	        React.createElement('br', null),
-	        'react.js edit by ',
-	        React.createElement(
-	          'a',
-	          { href: 'http://shoesnosocks.tumblr.com', title: 'kevin chavez' },
-	          'kevin chavez'
-	        )
-	      )
-	    );
+	
+	var Footer = function (_React$Component4) {
+	  _inherits(Footer, _React$Component4);
+	
+	  function Footer() {
+	    _classCallCheck(this, Footer);
+	
+	    return _possibleConstructorReturn(this, (Footer.__proto__ || Object.getPrototypeOf(Footer)).apply(this, arguments));
 	  }
-	});
+	
+	  _createClass(Footer, [{
+	    key: 'render',
+	    value: function render() {
+	      return React.createElement(
+	        'div',
+	        { id: 'footer' },
+	        React.createElement(
+	          'form',
+	          { action: '/search', method: 'get', id: 'searchform' },
+	          React.createElement('input', { type: 'text', name: 'q', results: '5' })
+	        ),
+	        React.createElement(
+	          'div',
+	          { className: 'attribution' },
+	          React.createElement(
+	            'a',
+	            { href: 'http://www.tumblr.com/theme/3357', title: 'tumblr theme feather' },
+	            'feather'
+	          ),
+	          ' by ',
+	          React.createElement(
+	            'a',
+	            { href: 'http://erichu.tumblr.com', title: 'eric hu' },
+	            'eric hu'
+	          ),
+	          React.createElement('br', null),
+	          'react.js edit by ',
+	          React.createElement(
+	            'a',
+	            { href: 'http://shoesnosocks.tumblr.com', title: 'kevin chavez' },
+	            'kevin chavez'
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Footer;
+	}(React.Component);
 	
 	/**
 	 * The Blog. This is the only class that gets "manually" appended to the HTML.
 	 * Recieves the JSON object from feather.html
 	 */
+	
+	
 	window.Blog = React.createClass({
 	  displayName: 'Blog',
 	
@@ -332,6 +392,10 @@
 
 	"use strict";
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -432,11 +496,9 @@
 	  return PrePost;
 	}(React.Component);
 	
-	module.exports = {
-	  PostMeta: PostMeta,
-	  PostNotes: PostNotes,
-	  PrePost: PrePost
-	};
+	exports.PostMeta = PostMeta;
+	exports.PostNotes = PostNotes;
+	exports.PrePost = PrePost;
 
 /***/ },
 /* 3 */

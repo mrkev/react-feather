@@ -7,8 +7,8 @@ import TextPost  from './post/text.jsx'
 import AudioPost from './post/audio.jsx'
 
 /** Includes: Blog title, links to pages and description */
-let Header = React.createClass({
-  render: function() { return (
+class Header extends React.Component {
+  render() { return (
     <div id="header">
       <h1><a href="/">{this.props.Title}</a></h1>
 
@@ -38,12 +38,12 @@ let Header = React.createClass({
 
       </p>
     </div>
-  );}
-});
+  )}
+}
 
 /** Pagination shown on post-list pages (like the index page of the blog, for example) */
-let Pagination = React.createClass({
-  render: function() { return (
+class Pagination extends React.Component {
+  render() { return (
     <div id="navigation">
 
       {!!this.props.NextPage &&
@@ -57,12 +57,12 @@ let Pagination = React.createClass({
       }
 
     </div>
-  );}
-});
+  )}
+}
 
 /** Pagination shown on permalink pages */
-let PermalinkPagination = React.createClass({
-  render: function() { return (
+class PermalinkPagination extends React.Component {
+  render() { return (
     <div id="navigation">
 
       {!!this.props.PreviousPost &&
@@ -76,12 +76,12 @@ let PermalinkPagination = React.createClass({
       }
 
     </div>
-  );}
-});
+  )}
+}
 
 /** Includes: theme attribution and search field */
-let Footer = React.createClass({
-  render: function() { return (
+class Footer extends React.Component {
+  render() { return (
     <div id="footer">
 
       <form action="/search" method="get" id="searchform">
@@ -92,8 +92,8 @@ let Footer = React.createClass({
         <a href="http://www.tumblr.com/theme/3357" title="tumblr theme feather">feather</a> by <a href="http://erichu.tumblr.com" title="eric hu">eric hu</a><br />react.js edit by <a href="http://shoesnosocks.tumblr.com" title="kevin chavez">kevin chavez</a>
       </div>
     </div>
-  );}
-});
+  )}
+}
 
 
 /**

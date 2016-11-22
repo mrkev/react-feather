@@ -37,8 +37,8 @@ class PrePost extends React.Component {
   )}
 }
 
-module.exports = {
-  PostMeta : PostMeta,
-  PostNotes : PostNotes,
-  PrePost : PrePost,
+export {
+  PostMeta,
+  PostNotes,
+  PrePost,
 }

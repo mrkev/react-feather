@@ -254,32 +254,55 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	var PostMeta = __webpack_require__(2).PostMeta;
-	var PostNotes = __webpack_require__(2).PostNotes;
-	var PrePost = __webpack_require__(2).PrePost;
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'r_post_photo' },
-	      React.createElement(
-	        'div',
-	        { className: 'photo post' },
-	        React.createElement('div', { className: 'pp-photo',
-	          dangerouslySetInnerHTML: { __html: '' + this.props.LinkOpenTag + '\n' + '<img src="' + this.props["PhotoURL-500"] + '" alt="' + this.props.PhotoAlt + '" />' + this.props.LinkCloseTag
-	          } }),
-	        !!this.props.Caption && React.createElement('p', { dangerouslySetInnerHTML: { __html: this.props.Caption } }),
-	        React.createElement(PostMeta, this.props)
-	      ),
-	      !!this.props.PostNotes && React.createElement(PostNotes, { PostNotes: this.props.PostNotes })
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _includes = __webpack_require__(2);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var PhotoPost = function (_React$Component) {
+	  _inherits(PhotoPost, _React$Component);
+	
+	  function PhotoPost() {
+	    _classCallCheck(this, PhotoPost);
+	
+	    return _possibleConstructorReturn(this, (PhotoPost.__proto__ || Object.getPrototypeOf(PhotoPost)).apply(this, arguments));
+	  }
+	
+	  _createClass(PhotoPost, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "r_post_photo" },
+	        React.createElement(
+	          "div",
+	          { className: "photo post" },
+	          React.createElement("div", { className: "pp-photo",
+	            dangerouslySetInnerHTML: { __html: '' + this.props.LinkOpenTag + '\n' + '<img src="' + this.props["PhotoURL-500"] + '" alt="' + this.props.PhotoAlt + '" />' + this.props.LinkCloseTag
+	            } }),
+	          !!this.props.Caption && React.createElement("p", { dangerouslySetInnerHTML: { __html: this.props.Caption } }),
+	          React.createElement(_includes.PostMeta, this.props)
+	        ),
+	        !!this.props.PostNotes && React.createElement(_includes.PostNotes, { PostNotes: this.props.PostNotes })
+	      );
+	    }
+	  }]);
+	
+	  return PhotoPost;
+	}(React.Component);
+	
+	exports.default = PhotoPost;
 
 /***/ },
 /* 2 */
@@ -350,68 +373,114 @@
 /* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	var PostMeta = __webpack_require__(2).PostMeta;
-	var PostNotes = __webpack_require__(2).PostNotes;
-	var PrePost = __webpack_require__(2).PrePost;
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'r_post_quote' },
-	      React.createElement(
-	        'div',
-	        { className: 'quote post' },
-	        React.createElement(
-	          'h2',
-	          null,
-	          this.props.Quote
-	        ),
-	        !!this.props.Source && React.createElement(
-	          'p',
-	          null,
-	          this.props.Source
-	        ),
-	        React.createElement(PostMeta, this.props)
-	      ),
-	      React.createElement(PostNotes, { PostNotes: this.props.PostNotes })
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _includes = __webpack_require__(2);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var QuotePost = function (_React$Component) {
+	  _inherits(QuotePost, _React$Component);
+	
+	  function QuotePost() {
+	    _classCallCheck(this, QuotePost);
+	
+	    return _possibleConstructorReturn(this, (QuotePost.__proto__ || Object.getPrototypeOf(QuotePost)).apply(this, arguments));
+	  }
+	
+	  _createClass(QuotePost, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "r_post_quote" },
+	        React.createElement(
+	          "div",
+	          { className: "quote post" },
+	          React.createElement(
+	            "h2",
+	            null,
+	            this.props.Quote
+	          ),
+	          !!this.props.Source && React.createElement(
+	            "p",
+	            null,
+	            this.props.Source
+	          ),
+	          React.createElement(_includes.PostMeta, this.props)
+	        ),
+	        React.createElement(_includes.PostNotes, { PostNotes: this.props.PostNotes })
+	      );
+	    }
+	  }]);
+	
+	  return QuotePost;
+	}(React.Component);
+	
+	exports.default = QuotePost;
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	var PostMeta = __webpack_require__(2).PostMeta;
-	var PostNotes = __webpack_require__(2).PostNotes;
-	var PrePost = __webpack_require__(2).PrePost;
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'r_post_video' },
-	      React.createElement(
-	        'div',
-	        { className: 'video post' },
-	        React.createElement('div', { className: 'vp-body',
-	          dangerouslySetInnerHTML: { __html: this.props["Video-500"] } }),
-	        !!this.props.Caption && React.createElement('div', { dangerouslySetInnerHTML: { __html: this.props.Caption } }),
-	        React.createElement(PostMeta, this.props)
-	      ),
-	      !!this.props.PostNotes && React.createElement(PostNotes, { PostNotes: this.props.PostNotes })
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _includes = __webpack_require__(2);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var VideoPost = function (_React$Component) {
+	  _inherits(VideoPost, _React$Component);
+	
+	  function VideoPost() {
+	    _classCallCheck(this, VideoPost);
+	
+	    return _possibleConstructorReturn(this, (VideoPost.__proto__ || Object.getPrototypeOf(VideoPost)).apply(this, arguments));
+	  }
+	
+	  _createClass(VideoPost, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "r_post_video" },
+	        React.createElement(
+	          "div",
+	          { className: "video post" },
+	          React.createElement("div", { className: "vp-body",
+	            dangerouslySetInnerHTML: { __html: this.props["Video-500"] } }),
+	          !!this.props.Caption && React.createElement("div", { dangerouslySetInnerHTML: { __html: this.props.Caption } }),
+	          React.createElement(_includes.PostMeta, this.props)
+	        ),
+	        !!this.props.PostNotes && React.createElement(_includes.PostNotes, { PostNotes: this.props.PostNotes })
+	      );
+	    }
+	  }]);
+	
+	  return VideoPost;
+	}(React.Component);
+	
+	exports.default = VideoPost;
 
 /***/ },
 /* 5 */
@@ -479,147 +548,216 @@
 /* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	var PostMeta = __webpack_require__(2).PostMeta;
-	var PostNotes = __webpack_require__(2).PostNotes;
-	var PrePost = __webpack_require__(2).PrePost;
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'r_post_audio' },
-	      React.createElement(
-	        'div',
-	        { className: 'conversation post' },
-	        !!this.props.Title && React.createElement(
-	          'b',
-	          null,
-	          this.props.Title
-	        ),
-	        React.createElement(
-	          'ul',
-	          null,
-	          Object.keys(this.props.Lines).map(function (l) {
-	            var line = this.props.Lines[l];
-	            return React.createElement(
-	              'li',
-	              { className: 'member{line.UserNumber}' },
-	              !!line.Label && React.createElement(
-	                'span',
-	                { className: 'label' },
-	                line.Label
-	              ),
-	              line.Line
-	            );
-	          }.bind(this))
-	        ),
-	        React.createElement(PostMeta, this.props)
-	      ),
-	      React.createElement(PostNotes, { PostNotes: this.props.PostNotes })
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _includes = __webpack_require__(2);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ChatPost = function (_React$Component) {
+	  _inherits(ChatPost, _React$Component);
+	
+	  function ChatPost() {
+	    _classCallCheck(this, ChatPost);
+	
+	    return _possibleConstructorReturn(this, (ChatPost.__proto__ || Object.getPrototypeOf(ChatPost)).apply(this, arguments));
+	  }
+	
+	  _createClass(ChatPost, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "r_post_audio" },
+	        React.createElement(
+	          "div",
+	          { className: "conversation post" },
+	          !!this.props.Title && React.createElement(
+	            "b",
+	            null,
+	            this.props.Title
+	          ),
+	          React.createElement(
+	            "ul",
+	            null,
+	            Object.keys(this.props.Lines).map(function (l) {
+	              var line = this.props.Lines[l];
+	              return React.createElement(
+	                "li",
+	                { className: "member{line.UserNumber}" },
+	                !!line.Label && React.createElement(
+	                  "span",
+	                  { className: "label" },
+	                  line.Label
+	                ),
+	                line.Line
+	              );
+	            }.bind(this))
+	          ),
+	          React.createElement(_includes.PostMeta, this.props)
+	        ),
+	        React.createElement(_includes.PostNotes, { PostNotes: this.props.PostNotes })
+	      );
+	    }
+	  }]);
+	
+	  return ChatPost;
+	}(React.Component);
+	
+	exports.default = ChatPost;
 
 /***/ },
 /* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	var PostMeta = __webpack_require__(2).PostMeta;
-	var PostNotes = __webpack_require__(2).PostNotes;
-	var PrePost = __webpack_require__(2).PrePost;
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'r_post_text' },
-	      React.createElement(
-	        'div',
-	        { className: 'text post' },
-	        !!this.props.Title && React.createElement(
-	          'h2',
-	          null,
-	          this.props.Title
-	        ),
-	        React.createElement('div', { className: 'tp-body',
-	          dangerouslySetInnerHTML: { __html: this.props.Body } }),
-	        React.createElement(PostMeta, this.props)
-	      ),
-	      React.createElement(PostNotes, { PostNotes: this.props.PostNotes })
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _includes = __webpack_require__(2);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var TextPost = function (_React$Component) {
+	  _inherits(TextPost, _React$Component);
+	
+	  function TextPost() {
+	    _classCallCheck(this, TextPost);
+	
+	    return _possibleConstructorReturn(this, (TextPost.__proto__ || Object.getPrototypeOf(TextPost)).apply(this, arguments));
+	  }
+	
+	  _createClass(TextPost, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "r_post_text" },
+	        React.createElement(
+	          "div",
+	          { className: "text post" },
+	          !!this.props.Title && React.createElement(
+	            "h2",
+	            null,
+	            this.props.Title
+	          ),
+	          React.createElement("div", { className: "tp-body",
+	            dangerouslySetInnerHTML: { __html: this.props.Body } }),
+	          React.createElement(_includes.PostMeta, this.props)
+	        ),
+	        React.createElement(_includes.PostNotes, { PostNotes: this.props.PostNotes })
+	      );
+	    }
+	  }]);
+	
+	  return TextPost;
+	}(React.Component);
+	
+	exports.default = TextPost;
 
 /***/ },
 /* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
-	var PostMeta = __webpack_require__(2).PostMeta;
-	var PostNotes = __webpack_require__(2).PostNotes;
-	var PrePost = __webpack_require__(2).PrePost;
-	
-	module.exports = React.createClass({
-	  displayName: 'exports',
-	
-	  render: function render() {
-	    return React.createElement(
-	      'div',
-	      { className: 'r_post_audio' },
-	      React.createElement(
-	        'div',
-	        { className: 'audio post' },
-	        React.createElement('div', { className: 'ap-player',
-	          dangerouslySetInnerHTML: { __html: this.props.AudioPlayerGrey } }),
-	        React.createElement(
-	          'div',
-	          { className: 'audio_details' },
-	          !!this.props.Artist && React.createElement(
-	            'b',
-	            null,
-	            this.props.Artist
-	          ),
-	          ' \u2013',
-	          !!this.props.TrackName && React.createElement(
-	            'b',
-	            null,
-	            this.props.TrackName,
-	            ' '
-	          ),
-	          React.createElement(
-	            'span',
-	            { className: 'playcount' },
-	            '(',
-	            this.props.PlayCountWithLabel,
-	            ')'
-	          )
-	        ),
-	        !!this.props.Caption && React.createElement('div', { className: 'audio_caption',
-	          dangerouslySetInnerHTML: { __html: this.props.Caption } }),
-	        !!this.props.ExternalAudio && React.createElement(
-	          'p',
-	          null,
-	          React.createElement(
-	            'a',
-	            { href: '{this.props.ExternalAudioURL}' },
-	            this.props["lang:Download"]
-	          )
-	        ),
-	        React.createElement(PostMeta, this.props)
-	      ),
-	      React.createElement(PostNotes, { PostNotes: this.props.PostNotes })
-	    );
-	  }
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
 	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _includes = __webpack_require__(2);
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var AudioPost = function (_React$Component) {
+	  _inherits(AudioPost, _React$Component);
+	
+	  function AudioPost() {
+	    _classCallCheck(this, AudioPost);
+	
+	    return _possibleConstructorReturn(this, (AudioPost.__proto__ || Object.getPrototypeOf(AudioPost)).apply(this, arguments));
+	  }
+	
+	  _createClass(AudioPost, [{
+	    key: "render",
+	    value: function render() {
+	      return React.createElement(
+	        "div",
+	        { className: "r_post_audio" },
+	        React.createElement(
+	          "div",
+	          { className: "audio post" },
+	          React.createElement("div", { className: "ap-player",
+	            dangerouslySetInnerHTML: { __html: this.props.AudioPlayerGrey } }),
+	          React.createElement(
+	            "div",
+	            { className: "audio_details" },
+	            !!this.props.Artist && React.createElement(
+	              "b",
+	              null,
+	              this.props.Artist
+	            ),
+	            " \u2013",
+	            !!this.props.TrackName && React.createElement(
+	              "b",
+	              null,
+	              this.props.TrackName,
+	              " "
+	            ),
+	            React.createElement(
+	              "span",
+	              { className: "playcount" },
+	              "(",
+	              this.props.PlayCountWithLabel,
+	              ")"
+	            )
+	          ),
+	          !!this.props.Caption && React.createElement("div", { className: "audio_caption",
+	            dangerouslySetInnerHTML: { __html: this.props.Caption } }),
+	          !!this.props.ExternalAudio && React.createElement(
+	            "p",
+	            null,
+	            React.createElement(
+	              "a",
+	              { href: "{this.props.ExternalAudioURL}" },
+	              this.props["lang:Download"]
+	            )
+	          ),
+	          React.createElement(_includes.PostMeta, this.props)
+	        ),
+	        React.createElement(_includes.PostNotes, { PostNotes: this.props.PostNotes })
+	      );
+	    }
+	  }]);
+	
+	  return AudioPost;
+	}(React.Component);
+	
+	exports.default = AudioPost;
 
 /***/ }
 /******/ ]);

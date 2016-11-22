@@ -58,11 +58,15 @@
 	
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
+	var _react = __webpack_require__(4);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	var urlParams; // http://stackoverflow.com/posts/2880929/revisions
 	/** Parses URL params */
 	
+	var urlParams; // http://stackoverflow.com/posts/2880929/revisions
 	(window.onpopstate = function () {
 	  var match,
 	      pl = /\+/g,
@@ -103,15 +107,13 @@
 	  window.props = props;
 	
 	  if (urlParams['render'] !== 'raw') {
-	    _reactDom2.default.render(React.createElement(_blog2.default, props), document.getElementById('blog'));
+	    _reactDom2.default.render(_react2.default.createElement(_blog2.default, props), document.getElementById('blog'));
 	  } else {
 	    document.open();
 	    document.write(JSON.stringify(props));
 	    document.close();
 	  }
 	}).catch(console.error);
-	
-	_reactDom2.default.render(React.createElement(MyComponent, null), node);
 
 /***/ },
 /* 1 */

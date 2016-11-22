@@ -19,12 +19,12 @@
 
 <body id="blog">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.3.2/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.0/react-dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
   
-  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/react-feather/bundler/config.js"></script>
-  <script type="text/babel" src="https://gitcdn.xyz/repo/mrkev/react-feather/bundler/build/main.bundle.js"></script>
+  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/react-feather/bundler/config.js"></script>
+  <script type="text/babel" src="https://raw.githubusercontent.com/mrkev/react-feather/bundler/build/main.bundle.js"></script>
   
   <!-- HELPERS -->
 
@@ -41,24 +41,6 @@
       while (match = search.exec(query))
          urlParams[decode(match[1])] = decode(match[2]);
   })();
-  </script>
-
-  <script type="text/babel">
-  /** Dynamically loads a script */
-  window.loadScript = (url, callback) => new Promise((res, rej) => {
-      let script     = document.createElement('script')
-      script.type    = "text\/babel"
-      script.onerror = rej
-      script.onload  = res
-      document.head.appendChild(script)
-      script.src     = url
-      console.log(script)
-  })
-
-  window.loadScript('./lol.js')
-  .then(x => console.log('YAY'))
-  .catch(console.error)
-  console.log('asdf')
   </script>
 
   <script type="text/babel">
@@ -93,9 +75,6 @@
     head.appendChild(style);
 
   </script>
-
-
-
 
   <script type="text/babel">
 
@@ -225,7 +204,7 @@
                   "AudioPlayerGrey"      : {JSAudioPlayerGrey},
                   "PlayCountWithLabel"   : "{PlayCountWithLabel}",
                 {block:Caption}
-                  "Caption"              : {JSCaption},
+                  "Caption"              : "DISABLED",
                 {/block:Caption}
                 {block:ExternalAudio}
                   "ExternalAudioURL"     : "{ExternalAudioURL}",
@@ -254,26 +233,24 @@
       }
     }` /*586f3690*/
 
-    // Promise.resolve(window.getRenderedObj(raw_source))
-    // .then(props => {
-    //   if (!props) throw new Error("LAME");
-    //   window.props = props;
+    Promise.resolve(window.getRenderedObj(raw_source))
+    .then(props => {
+      if (!props) throw new Error("LAME");
+      window.props = props;
 
 
-    //   if (urlParams['render'] !== 'raw') {
-    //     ReactDOM.render(
-    //       <Blog {... props} />,
-    //       document.getElementById('blog')
-    //     );
-    //   } else {
-    //     document.open();
-    //     document.write(JSON.stringify(props));
-    //     document.close();
-    //   }
-    // })
-
-
-    // .catch(console.error);
+      if (urlParams['render'] !== 'raw') {
+        ReactDOM.render(
+          <Blog {... props} />,
+          document.getElementById('blog')
+        );
+      } else {
+        document.open();
+        document.write(JSON.stringify(props));
+        document.close();
+      }
+    })
+    .catch(console.error);
 
   </script>
   </body>

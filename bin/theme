@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+program
+  .command('init', '')
+  .command('testserver', '')
+  .command('gentumblr', '')
+
+program.parse(process.argv);

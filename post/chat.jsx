@@ -12,10 +12,10 @@ export default class ChatPost extends React.Component {
         }
 
         <ul>
-        {Object.keys(this.props.Lines).map(function (l) {
+        {Object.keys(this.props.Lines).map(function (l, i) {
           var line = this.props.Lines[l];
           return (
-            <li className="member{line.UserNumber}">
+            <li className="member{line.UserNumber}" key={i}>
 
               {!!line.Label && <span className="label">{line.Label}</span> }
               {line.Line}

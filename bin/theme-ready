@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+// meta-TODO: compile here, not on run
+// TODO: copy from bin/static to ../static

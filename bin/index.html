@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <head>
   <!-- 6f011cda-9e1c-11e6-b4f7-531e647e5630 -->
-  <!-- 
+  <!--
     The line above identifies this as a tumblr+react theme.
     Do not remove!
   -->
@@ -11,19 +11,19 @@
 
   <link rel="shortcut icon" href="{Favicon}">
   <link rel="alternate" type="application/rss+xml" href="{RSS}">
-  <link rel="apple-touch-icon" href="{PortraitURL-128}"></link> 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+  <link rel="apple-touch-icon" href="{PortraitURL-128}"></link>
   <link rel="stylesheet" href="https://gitcdn.xyz/repo/mrkev/react-feather/master/feather.css" />
 
 </head>
 
-<body id="blog">
-  <script type="text/babel">
+<body>
+  <div id="blog"></div>
+  <script>
 
     window.getRenderedObj = function (strsrc) {
+      console.log('leggo')
       var res;
-      try { eval("res = " + strsrc); return res; } 
+      try { eval("res = " + strsrc); return res; }
       catch (e) { console.error(e); return null; }
     }
 
@@ -182,9 +182,9 @@
       }
     }` /*586f3690*/
 
-    window.blog = window.getRenderedObj(window.raw_source);
-    
+    window.props = window.getRenderedObj(window.raw_source);
+
   </script>
-  <script src="https://rawgit.com/mrkev/react-feather/bundler/build/main.bundle.js"></script>
+  <script src="/static/bundle.js"></script>
 </body>
 </html>

@@ -17,14 +17,14 @@ class Header extends React.Component {
       <p id="description">
 
         {!!this.props.Pages &&
-          Object.keys(this.props.Pages).map(function (p) {
+          Object.keys(this.props.Pages).map(function (p, i) {
             var page = this.props.Pages[p];
-            return <a href={page.URL} style={{marginRight:".5em"}}>{page.Label}</a> 
+            return <a href={page.URL} style={{marginRight:".5em"}} key={i}>{page.Label}</a>
           }.bind(this))
         }
 
         {!!this.props.AskEnabled &&
-          <a href="/ask" style={{marginRight:".5em"}}>ask</a> 
+          <a href="/ask" style={{marginRight:".5em"}}>ask</a>
         }
 
         {!!this.props.SubmissionsEnabled &&
@@ -34,8 +34,8 @@ class Header extends React.Component {
         <br />
 
         {!!this.props.Description &&
-          <div dangerouslySetInnerHTML={{__html: this.props.Description}}>
-          </div>
+          <span dangerouslySetInnerHTML={{__html: this.props.Description}}>
+          </span>
         }
 
       </p>
@@ -97,30 +97,28 @@ class Footer extends React.Component {
   )}
 }
 
-
 /**
  * The Blog. This is the only class that gets "manually" appended to the HTML.
  * Recieves the JSON object from feather.html
  */
 export default class Blog extends React.Component {
-  render() { return (
+  render() { return !this.props.Posts ? <h1>RIP</h1> : (
     <div>
       <Header {... this.props} />
-
       <div id="content">
-        {Object.keys(this.props.Posts).map(function (p) {
+        {Object.keys(this.props.Posts).map(function (p, i) {
           var post = this.props.Posts[p];
 
           switch (post.PostType) {
 
             /** Photosets have type photo, but get passed as video smh */
-            case "photo": return !post["Video-500"] ? <PhotoPost {... post} /> : <VideoPost {... post} />
-            case "quote": return <QuotePost {... post} />
-            case "video": return <VideoPost {... post} />
-            case  "link": return <LinkPost  {... post} />
-            case  "chat": return <ChatPost  {... post} />
-            case  "text": return <TextPost  {... post} />
-            case "audio": return <AudioPost {... post} />
+            case "photo": return !post["Video-500"] ? <PhotoPost {... post} key={i}/> : <VideoPost {... post} key={i}/>
+            case "quote": return <QuotePost {... post} key={i}/>
+            case "video": return <VideoPost {... post} key={i}/>
+            case  "link": return <LinkPost  {... post} key={i}/>
+            case  "chat": return <ChatPost  {... post} key={i}/>
+            case  "text": return <TextPost  {... post} key={i}/>
+            case "audio": return <AudioPost {... post} key={i}/>
           }
         }.bind(this))}
 

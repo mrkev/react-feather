@@ -8,6 +8,8 @@ import AudioPost from './post/audio.jsx'
 
 import React from 'react'
 
+require("./feather.css");
+
 /** Includes: Blog title, links to pages and description */
 class Header extends React.Component {
   render() { return (
@@ -137,3 +139,32 @@ export default class Blog extends React.Component {
     </div>
   )}
 }
+
+
+import config from './config.js'
+
+/** The custom CSS thing */
+
+let css = `
+  ${config["CustomCSS"]}
+  body { font-family : monospace; background: ${config["color:Background"]}; color: ${config["color:Text"]}; }
+  #footer .attribution a, #footer .attribution a:link, #footer .attribution a:visited, #header #description a, #header #description a:link, #header #description a:visited, a { color: ${config["color:Links"]}; }
+  a:hover { color: ${config["color:Links Hover"]}; }
+  #header h1 a { color: ${config["color:Heading"]}; }
+  #header h1 a:hover { color: ${config["color:Heading Hover"]}; }
+  #description { color: ${config["color:Description"]}; }
+  .permalink a { color: ${config["color:Permalink"]}; }
+  .permalink a:hover { color: ${config["color:Permalink Hover"]}; }
+  #footer, .quote p, .photo p, .video p, .audio p, #content .conversation, .text blockquote { color: ${config["color:Text Alt"]}; }
+`
+
+let head  = document.head || document.getElementsByTagName('head')[0],
+    style = document.createElement('style');
+
+style.type = 'text/css';
+
+if (style.styleSheet) { style.styleSheet.cssText = css; }
+else { style.appendChild(document.createTextNode(css)); }
+
+head.appendChild(style);
+

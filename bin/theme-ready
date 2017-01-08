@@ -1,4 +1,50 @@
 #!/usr/bin/env node
 
-// meta-TODO: compile here, not on run
-// TODO: copy from bin/static to ../static
+const fs            = require('fs')
+const path 					= require('path')
+const program       = require('commander')
+
+program
+  .usage('[package.json]')
+  .parse(process.argv)
+
+/** Compile the bundle */
+
+const webpack       = require('webpack');
+const config        = require('./webpack.config');
+config.output.path  = path.join(process.cwd(), 'static')
+const compiler      = webpack(config);
+
+process.stderr.write('compiling...\n')
+compiler.run((err, stats) => {
+  if (err) {
+    console.error(err)
+  } else {
+    process.stderr.write('All done!\n')
+  }
+})
+
+/** Output html to go on tumblr */
+const dfp = path.resolve(process.cwd(), 'package.json')
+const pkg = require(program.args[0] || dfp)
+const idx = path.resolve(__dirname, 'index.html');
+
+if (!pkg.repository.url) {
+	console.log('no repository url!')
+	exit(0)
+}
+
+const gitcdn = 'https://gitcdn.xyz/repo/' + pkg.repository.url
+	.replace(/^git\+/, '')
+	.replace('https://github.com/', '')
+	.replace(/\.git$/, '')
+	+ '/master'
+
+const index = fs
+	.readFileSync(idx, 'utf8')
+	.replace(
+		'/static/bundle.js',
+		gitcdn + '/static/bundle.js') // replace local /static/bundle.js for git cdn one
+
+console.log(index)
+

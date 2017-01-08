@@ -54,18 +54,6 @@ let get_local = (url) => new Promise((res, rej) => {
 
 /** Webpack mcjiggs */
 
-// TODO: Make it a command, not output every time
-compiler.plugin('emit', (compilation, cb) => {
-  Object.keys(compilation.assets).forEach(key => {
-    if (!fs.existsSync(config.output.path)) fs.mkdirSync(config.output.path)
-    const file = path.resolve(config.output.path, key)
-    const data = compilation.assets[key].source()
-    console.log('writing', file)
-    fs.writeFileSync(file, data)
-  })
-  cb()
-})
-
 app.use(require('webpack-dev-middleware')(compiler, {
   publicPath: config.output.publicPath,
   noInfo: true,
@@ -73,8 +61,6 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }));
 
 app.use(require('webpack-hot-middleware')(compiler));
-
-
 
 /** Gets a resource in a remote tumblr src.
  *  If resource is a theme-page
